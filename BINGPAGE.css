@@ -1,0 +1,49 @@
+body {
+	background-image: url("BINGPAGE.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: Sans-Serif;
+}
+
+.topNav{
+	color: white;
+	padding-left: 1.5em;
+	
+}
+
+.topNav li a{
+	
+	padding-right: 1.2em;
+	padding-left: 1.2em;
+	text-decoration:none;
+	
+}
+
+.topNav li a:visited{
+	
+	color: white;
+}
+
+li{
+	display: inline;
+	
+}
+
+.searchRow {
+	padding-left: 1.7em;
+	padding-top: 1.5em;
+	vertical-align: middle;	
+	display: inline-block;
+	font-size: 85px;
+	
+	
+}
+
+
+
+
+
+#image {margin-right:10px;}
+#form {display: inline-block;}
+
+
