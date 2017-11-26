@@ -7,8 +7,55 @@
 		<link rel="stylesheet" type="text/css" href="BINGPAGE.css">
 		
 	</head>
-
+	
 	<body>
+	<script>
+		var backgroundIndex = 0;
+		var calcHidden = true;
+		var graphHidden = true;
+		
+		
+		function incBackgroundIndex(x){
+			backgroundIndex = backgroundIndex + x + 5;
+			backgroundIndex = backgroundIndex % 5;
+			
+			switch (backgroundIndex){
+			case 0: document.getElementsByTagName("body")[0].style.backgroundImage = "url(background.jpg)"; break;
+			
+			case 1:document.getElementsByTagName("body")[0].style.backgroundImage = "url(background0.jpg)"; break;
+			
+			case 2:document.getElementsByTagName("body")[0].style.backgroundImage = "url(background1.jpg)"; break;
+			
+			case 3:document.getElementsByTagName("body")[0].style.backgroundImage = "url(background2.jpg)"; break;
+			
+			case 4:document.getElementsByTagName("body")[0].style.backgroundImage = "url(background3.jpg)"; break;
+			
+			
+			}
+			document.getElementById("testo").innerHTML = Math.abs(backgroundIndex);
+		}
+		
+		function toggleCalculator(){
+			if (calcHidden == true){
+				document.getElementById("calculator").style.display = "block";
+				
+			}else{
+				document.getElementById("calculator").style.display = "none";
+			}
+			calcHidden = !calcHidden;
+		}
+		
+		function toggleMovingGraph(){
+		
+		
+		}
+		
+		function addValueOrOp(){
+			
+		}
+	
+	</script>
+	
 		<div>
 			<nav class="topNav"><ul>
 				<li><a href="index.html">Images</a></li>
@@ -16,22 +63,84 @@
 				<li><a href="index.html">Maps</a></li>
 				<li><a href="index.html">News</a></li>
 				|
-				<li><a href="BINGPAGE.html">Cooper_Tayler</a></li>
+				<li><a href="index.html">Cooper_Tayler</a>
+				<ul class="dropdown">
+					<li><button class="featureButton" type="button" onClick="toggleCalculator()">Calculator</button></li>
+					<li><button class="featureButton" type="button" onClick="toggleMovingGraph()">Moving Graph</button></li>
+				
+				</ul>
+				</li>
 			
 			</ul></nav>
 		
 		</div>
-	</body>
+	
+	
+	
 		<div class="searchRow">
-		 		<img id="image" src="bingo.png" alt="Bing Logo" style="width:55px; height:61px;">
-				<span>Bing<span>
+		 		<img id="image" src="bingo.png" alt="Bing Logo" style="width:40px; height:44px;">
+				<span>Bing</span>
 				<form id = "form">
-					<input id "test" type="text" name="searchText">
-					<input type="submit" value="submit">
+					<input id="searchBar" type="text" name="searchText">
+					<input id="searchButton" type="submit" value="S">
 				</form>
 				
 				
 		
 		</div>
+		
+		<div id="calculator">
+		
+			
+			<div class="keys">
+			<ul>
+				<div>
+					<p>Bingo</p>
+					<button id="clear" type="button" onClick="addValue()">C</button> 
+					<input type ="text" id="valueBox" name="valueBox">
+				</div>
+				<div id="bodyKeys">
+					<br>
+					<button type="button" onClick="addValue()">7</button> 
+					<button type="button" onClick="addValue()">8</button> 
+					<button type="button" onClick="addValue()">9</button> 
+					<button type="button" onClick="addValue()">+</button> 
+					<br>
+					<button type="button" onClick="addValue()">4</button> 
+					<button type="button" onClick="addValue()">5</button> 
+					<button type="button" onClick="addValue()">6</button> 
+					<button type="button" onClick="addValue()">-</button> 
+					<br>
+					<button type="button" onClick="addValue()">1</button> 
+					<button type="button" onClick="addValue()">2</button> 
+					<button type="button" onClick="addValue()">3</button> 
+					<button type="button" onClick="addValue()">/</button> 
+					<br>
+					<button type="button" onClick="addValue()">0</button> 
+					<button type="button" onClick="addValue()">.</button>
+					<button type="button" onClick="addValue()">=</button> 
+					<button type="button" onClick="addValue()">X</button> 
+				</div>
+
+
+				
+				
+				
+				</li>			
+			</ul>
+			</div>
+				
+		
+		</div>
+		
+		
+	</body>
+
+	<footer>
+		<button type="button" onClick="incBackgroundIndex(-1)"><</button>
+		<button id="rightBackgroundButton" type="button" onClick="incBackgroundIndex(1)">></button>
 	
+	</footer>
+	
+	</html>
 	
