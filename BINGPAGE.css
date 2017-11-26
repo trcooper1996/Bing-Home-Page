@@ -131,29 +131,14 @@ footer button{
 
 #calculator{
 	
-	background: #cc476f;
-	float:left;
-	disaply: table;
-	border: 2px solid black;
-	width: 200px;
+	width:300px;
+	height:250px;
+	background: #f2f2f2;
 }
 
-#calculator td{
-	border: 3px solid black;
-	border-collapse: collapse;
+#button{
+	width:100%;
+	height:40px;
+	font-size:20px;
 }
 
-
-#calculator *{
-	display: table-cell;
-		
-}
-
-#calculator clear, valueBox{
-	disaply: inline;
-}
-
-#bodyKeys button{
-	
-	wfidth: 25px;
-}

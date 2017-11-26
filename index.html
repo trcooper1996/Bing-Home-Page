@@ -89,49 +89,72 @@
 		
 		</div>
 		
-		<div id="calculator">
-		
+		<form name="calculator">
+			<table id="calculator" border=2>
+				<tr>
+					<td>
+						<input id="button" name="clear" >
+					
+					</td>
+					
+					<td colspan=3>
+						<input id ="calcInput" name="M" type="text">
+					
+					</td>
+				
+				
+				</tr>
+				
+				<tr>
+				
+					<td><input id="button" type=button value="7" OnClick="calc.disaply.value+='7'"></td>
+					<td><input id="button" type=button value="8" OnClick="calc.disaply.value+='8'"></td>
+					<td><input id="button" type=button value="9" OnClick="calc.disaply.value+='9'"></td>
+					<td><input id="button" type=button value="+" OnClick="calc.disaply.value+='+'"></td>					
+				
+				
+				</tr>
+				
+				<tr>
+				
+					<td><input id="button" type=button value="4" OnClick="calc.disaply.value+='4'"></td>
+					<td><input id="button" type=button value="5" OnClick="calc.disaply.value+='5'"></td>
+					<td><input id="button" type=button value="6" OnClick="calc.disaply.value+='6'"></td>
+					<td><input id="button" type=button value="-" OnClick="calc.disaply.value+='-'"></td>					
+				
+				
+				</tr>
+				
+				<tr>
+				
+					<td><input id="button" type=button value="1" OnClick="calc.disaply.value+='1'"></td>
+					<td><input id="button" type=button value="2" OnClick="calc.disaply.value+='2'"></td>
+					<td><input id="button" type=button value="3" OnClick="calc.disaply.value+='3'"></td>
+					<td><input id="button" type=button value="x" OnClick="calc.disaply.value+='X'"></td>					
+				
+				
+				</tr>
+				
+				<tr>
+				
+					<td><input id="button" type=button value="0" OnClick="calc.M.value='0'"></td>
+					<td><input id="button" type=button value="." OnClick="calc.disaply.value+='.'"></td>
+					<td><input id="button" type=button value="=" OnClick="calc.disaply.value+='='"></td>
+					<td><input id="button" type=button value="X" OnClick="calc.disaply.value+='x'"></td>
+				
+				
+				</tr>
+				
+				
 			
-			<div class="keys">
-			<ul>
-				<div>
-					<p>Bingo</p>
-					<button id="clear" type="button" onClick="addValue()">C</button> 
-					<input type ="text" id="valueBox" name="valueBox">
-				</div>
-				<div id="bodyKeys">
-					<br>
-					<button type="button" onClick="addValue()">7</button> 
-					<button type="button" onClick="addValue()">8</button> 
-					<button type="button" onClick="addValue()">9</button> 
-					<button type="button" onClick="addValue()">+</button> 
-					<br>
-					<button type="button" onClick="addValue()">4</button> 
-					<button type="button" onClick="addValue()">5</button> 
-					<button type="button" onClick="addValue()">6</button> 
-					<button type="button" onClick="addValue()">-</button> 
-					<br>
-					<button type="button" onClick="addValue()">1</button> 
-					<button type="button" onClick="addValue()">2</button> 
-					<button type="button" onClick="addValue()">3</button> 
-					<button type="button" onClick="addValue()">/</button> 
-					<br>
-					<button type="button" onClick="addValue()">0</button> 
-					<button type="button" onClick="addValue()">.</button>
-					<button type="button" onClick="addValue()">=</button> 
-					<button type="button" onClick="addValue()">X</button> 
-				</div>
-
-
-				
-				
-				
-				</li>			
-			</ul>
-			</div>
-				
-		
-		</div>
+			
+			
+			
+			
+			
+			
+			</table>
+		</form>
 		
 		
 	</body>
