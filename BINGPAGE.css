@@ -113,7 +113,7 @@ ul li a:hover{
 
 footer{
 	
-	padding-top: 250px;
+	padding-top: 120px;
 }
 
 #rightBackgroundButton{
@@ -129,24 +129,42 @@ footer button{
 }
 
 
-#calculator{
+#calcTable{
 	
 	width:300px;
 	height:250px;
 	background: #f2f2f2;
+		
 }
 
-#calculator #button{
+#calcTable #button{
 	width:100%;
 	height:100%;
 	font-size:20px;
 }
 
-#calculator #calcInput{
+#calcTable #calcInput{
 	width: 100%;
 	height: 100%;
 }
 
 #clearButton{
 		width:75px;
+}
+
+#display{
+	
+	text-align: right;
+}
+
+#calcTable #button:hover{
+	background: #fff;
+}
+
+
+#graph{
+	
+	border: 5px solid red;
+	height: 200px;
+	background: white;
 }

@@ -9,9 +9,11 @@
 	</head>
 	
 	<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 	<script>
 		var backgroundIndex = 0;
-		var calcHidden = true;
+		var calcHidden = false;
 		var graphHidden = true;
 		
 		
@@ -37,10 +39,10 @@
 		
 		function toggleCalculator(){
 			if (calcHidden == true){
-				document.getElementById("calculator").style.display = "block";
+				document.getElementById("calcTable").style.display = "table";
 				
 			}else{
-				document.getElementById("calculator").style.display = "none";
+				document.getElementById("calcTable").style.display = "none";
 			}
 			calcHidden = !calcHidden;
 		}
@@ -50,9 +52,17 @@
 		
 		}
 		
-		function addValueOrOp(){
-			
+		function addToken(token){
+			document.getElementById("expression").value += document.getElementById("calcInput");
+		
+			document.getElementById("calcInput").value+=token;
 		}
+		
+		function calculate(){
+			document.getElementById("calcInput").value=eval(document.getElementById("calcInput").value);
+		}
+	
+		
 	
 	</script>
 	
@@ -89,16 +99,25 @@
 		
 		</div>
 		
-		<form name="calculator">
-			<table id="calculator" border=2>
+		<form name="calcForm">
+			<table id="calcTable" border=2>
+				<tr>
+					<td colspan=4>
+						<p id="expression"></p>
+					
+					</td>
+				
+				
+				</tr>
+			
 				<tr id="head">
 					<td id="clearButton">
-						<input id="button" type=button value="C" OnClick="FOOB">
+						<input id="button" type=button value="C" OnClick="calcForm.display.value=''">
 					
 					</td>
 					
 					<td colspan=3>
-						<input id ="calcInput" name="input" type="text">
+						<input id ="calcInput" name="display" type="text">
 					
 					</td>
 				
@@ -106,56 +125,65 @@
 				</tr>
 				
 				<tr>
+					<td><input id="button" type=button value="7" OnClick="addToken(7)"></td>
+					<td><input id="button" type=button value="8" OnClick="addToken(8)"></td>
+					<td><input id="button" type=button value="9" OnClick="addToken(9)"></td>
+					<td><input id="button" type=button value="+" OnClick="addToken('+')"></td>
+					
+				</tr>
 				
-					<td><input id="button" type=button value="7" OnClick="calc.disaply.value+='7'"></td>
-					<td><input id="button" type=button value="8" OnClick="calc.disaply.value+='8'"></td>
-					<td><input id="button" type=button value="9" OnClick="calc.disaply.value+='9'"></td>
-					<td><input id="button" type=button value="+" OnClick="calc.disaply.value+='+'"></td>					
+				<tr>
+				
+					<td><input id="button" type=button value="4" OnClick="addToken(4)"></td>
+					<td><input id="button" type=button value="5" OnClick="addToken(5)"></td>
+					<td><input id="button" type=button value="6" OnClick="addToken(6)"></td>
+					<td><input id="button" type=button value="-" OnClick="addToken('-')"></td>					
 				
 				
 				</tr>
 				
 				<tr>
 				
-					<td><input id="button" type=button value="4" OnClick="calc.disaply.value+='4'"></td>
-					<td><input id="button" type=button value="5" OnClick="calc.disaply.value+='5'"></td>
-					<td><input id="button" type=button value="6" OnClick="calc.disaply.value+='6'"></td>
-					<td><input id="button" type=button value="-" OnClick="calc.disaply.value+='-'"></td>					
+					<td><input id="button" type=button value="1" OnClick="addToken(1)"></td>
+					<td><input id="button" type=button value="2" OnClick="addToken(2)"></td>
+					<td><input id="button" type=button value="3" OnClick="addToken(3)"></td>
+					<td><input id="button" type=button value="*" OnClick="addToken('*')"></td>					
 				
 				
 				</tr>
 				
 				<tr>
 				
-					<td><input id="button" type=button value="1" OnClick="calc.disaply.value+='1'"></td>
-					<td><input id="button" type=button value="2" OnClick="calc.disaply.value+='2'"></td>
-					<td><input id="button" type=button value="3" OnClick="calc.disaply.value+='3'"></td>
-					<td><input id="button" type=button value="x" OnClick="calc.disaply.value+='X'"></td>					
+					<td><input id="button" type=button value="0" OnClick="addToken(0)"></td>
+					<td><input id="button" type=button value="." OnClick="addToken('.')"></td>
+					<td><input id="button" type=button value="=" OnClick="calculate()"></td>
+					<td><input id="button" type=button value="/" OnClick="addToken('/')"></td>
 				
 				
 				</tr>
-				
-				<tr>
-				
-					<td><input id="button" type=button value="0" OnClick="calc.M.value='0'"></td>
-					<td><input id="button" type=button value="." OnClick="calc.disaply.value+='.'"></td>
-					<td><input id="button" type=button value="=" OnClick="calc.disaply.value+='='"></td>
-					<td><input id="button" type=button value="X" OnClick="calc.disaply.value+='x'"></td>
-				
-				
-				</tr>
-				
-				
-			
-			
-			
-			
-			
-			
+							
 			
 			</table>
 		</form>
 		
+		
+		<div id="graphDiv">
+			<canvas id="graph"></canvas>
+			<script>
+			
+			var canvas = document.getElementById("graph");
+			var context = canvas.getContext("2d");
+			
+			function update(){
+				context.beginPath();
+				context.arc(100, 100, 50, 0, 2 * Math.PI, true);
+				context.fillStyle = "#FF6A6A"
+				context.fill();
+			
+			}
+			</script>
+			
+		</div>
 		
 	</body>
 
