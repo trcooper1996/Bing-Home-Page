@@ -171,27 +171,45 @@
 			<canvas id="graph"></canvas>
 			<script>
 			
-			var canvas = document.getElementById("graph");
+			var canvas = document.querySelector("#graph");
 			var context = canvas.getContext("2d");
 			
 			var canvasPos = getPosition(canvas);
 			var mouseX = 0;
 			var mouseY = 0;
 			
+			var isCircle = true;
+			
 			canvas.addEventListener("mousemove", setMousePosition, false);
+			canvas.addEventListener("click", toggleShape);
 			
 			function setMousePosition(e){
 				mouseX = e.clientX - canvasPos.x;
 				mouseY = e.clientY - canvasPos.y;
 			}
+			
+			function toggleShape(){
+				isCircle = !isCircle;
+			}
+			
+			
 			function update(){
 				context.clearRect(0, 0, canvas.width, canvas.height);
 			
 				context.beginPath();
-				context.arc(mouseX, mouseY, 20, 0, 2 * Math.PI, true);
-				context.fillStyle = "#f02416";
-				context.fill();
 				
+				if (isCircle){
+					context.arc(mouseX, mouseY, 50, 0, 2 * Math.PI, true);
+					context.fillStyle = "#f02416";
+					context.fill();
+				}else{
+					context.moveTo(mouseX-25, mouseY-25);
+					context.lineTo(mouseX, mouseY);
+					context.lineTo(mouseX+25, mouseY-25);
+					context.fillStyle = "#163af0";
+					context.fill();
+				}
+					
 				requestAnimationFrame(update);
 			
 			}
@@ -207,7 +225,7 @@
 				
 				while (el){
 					xPosition += (el.offsetLeft - el.scrollLeft + el.clientLeft);
-					yPosition += (el.offsetTop - el.scrollTOp + el.clientTop);
+					yPosition += (el.offsetTop - el.scrollTop + el.clientTop);
 					el = el.offsetParent;
 				}
 				

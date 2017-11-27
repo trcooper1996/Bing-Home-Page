@@ -165,6 +165,7 @@ footer button{
 #graph{
 	
 	border: 5px solid red;
-	height: 200px;
+	height: 250;
+	width: 300px;
 	background: white;
 }
